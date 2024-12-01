@@ -18,11 +18,8 @@ export default function Navbar() {
     <>
       <nav className={styles.navbar}>
         <div id="navbar-container">
-          <Link to="/" className="me-5">
-            Головна сторінка
-          </Link>
-          <Link to="/delivery-and-payment" className="me-5">
-            Доставка і оплата
+          <Link to="/about" className="me-5">
+            Про нас
           </Link>
           <Link to="/manufacturers" className="me-5">
             Виробники
@@ -30,12 +27,16 @@ export default function Navbar() {
           <Link to="/cooperation" className="me-5">
             Співпраця
           </Link>
+          <Link to="/delivery-and-payment" className="me-5">
+            Доставка і оплата
+          </Link>
           <Link to="/blog" className="me-5">
             Блог
           </Link>
-          <Link to="/about" className="me-5">
-            Про нас
-          </Link>
+          {/* <Link to="/" className="me-5">
+            Головна сторінка
+          </Link> */}
+
           <button className="m-2" onClick={() => setShowSignInForm(true)}>
             Вхід
           </button>
