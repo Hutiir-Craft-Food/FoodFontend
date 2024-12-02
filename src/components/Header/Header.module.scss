@@ -5,25 +5,135 @@
 .headerContainer {
   width: 1440px;
   height: 172px;
-  background: beige;
+  background: $white;
   display: flex;
-  justify-content: space-between;
-  .logo {
-    position: absolute;
-    width: 169.02px;
-    height: 50px;
-    left: -0.01px;
-    gap: 0px;
-    opacity: 0px;
+  // justify-content: space-between;
+  justify-content: center;
+  // position: relative;
+  // position: fixed;
+  // z-index: 999;
+  flex-direction: column;
+
+  align-items: center;
+  top: 20px;
+  left: 20px;
+  padding-top: 32px;
+  gap: 24px;
+  // overflow: hidden;
+  .rowOne {
+    width: 816px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // padding-left: 208px;
+    // gap: 10px;
+
+    .logo {
+      // position: absolute;
+      // width: 169.02px;
+      height: 50px;
+      // left: -0.01px;
+      // gap: 0px;
+      // opacity: 0px;
+    }
+    .nav {
+      all: unset;
+      width: 578px;
+      float: right;
+      // position: absolute;
+    }
   }
-  .userIcon {
-    position: absolute;
-    right: 120px;
-    top: 50px;
-    width: 24px;
-    height: 24px;
-    color: red;
-    gap: 0px;
-    opacity: 0px;
+  .rowTwo {
+    width: 1232px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 16px;
+    border-bottom: 1px solid lighten($primary, 30%);
+    justify-content: space-between;
+    .catalogButton {
+      width: 168px;
+      height: 44px;
+      display: flex;
+      // @include buttonL();
+      align-items: center;
+      justify-content: center;
+      @extend .paragraph4;
+      padding: 12px 32px;
+      border-radius: 8px;
+      border: none;
+      gap: 8px;
+      @include buttonPrimaryColor;
+      .active {
+        border: 1px solid $primary;
+        border-radius: 8px;
+      }
+    }
+    // input {
+    //   @include bordered($width: 1px, $color: $primary) {
+    //     border: $width solid $color;
+    //   }
+    // }
+
+    input[type='text'] {
+      width: 816px;
+      height: 44px;
+      padding: 0px 8px 0px 16px;
+      gap: 8px;
+      // @include inputs;
+      @extend .paragraph3;
+
+      border-radius: 8px;
+      text-align: left;
+      outline: none;
+      @include bordered(1px, lighten($primary, 30%));
+    }
+    &:placeholder-shown {
+      color: lighten($natural, 20%);
+    }
+    .iconsContainer {
+      width: 164px;
+      height: 44px;
+      gap: 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      .userIcon {
+        // position: relative;
+        // right: 120px;
+        // top: 50px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0px;
+      }
+      .heartIcon {
+        // position: relative;
+        // right: 120px;
+        // top: 50px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0px;
+      }
+      .backetIcon {
+        // position: relative;
+        // right: 120px;
+        // top: 50px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0px;
+      }
+    }
   }
 }
