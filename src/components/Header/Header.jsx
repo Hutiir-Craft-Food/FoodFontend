@@ -8,32 +8,16 @@ import SignInForm from '../SignInForm/SignInForm'
 import styles from './Header.module.scss'
 
 export default function Header() {
-  const [fix, setFix] = useState(false)
+  const [isScrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true })
 
-  // const authContext = useContext(AuthContext)
-  const [searchItem, setSearchItem] = useState('')
-
-  const handleInputChange = (e) => {
-    const searchItem = e.target.value
-    setSearchItem(searchItem)
-  }
-  const [showSignInForm, setShowSignInForm] = useState(false)
-  const [showSignUpContainer, setShowSignUpContainer] = useState(false)
-
-  const handleClose = () => {
-    setShowSignInForm(false)
-    setShowSignUpContainer(false)
-  }
-  // const scrolledUp = useScrollingUp()
-
-  function setFixed() {
-    if (window.scrollY >= 250) {
-      setFix(true)
-    } else {
-      setFix(false)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
     }
-  }
-  window.addEventListener('scroll', setFixed)
+  }, [])
+
+  // const scrolledUp = useScrollingUp()
 
   // // Sticky Menu Area
   // useEffect(() => {
@@ -42,7 +26,6 @@ export default function Header() {
   //     window.removeEventListener('scroll', isSticky)
   //   }
   // })
-
   // /* Method that will fix header after a specific scrollable */
   // const isSticky = (e) => {
   //   const rowTwo = document.querySelector('.rowTwo')
@@ -52,18 +35,47 @@ export default function Header() {
   //     : rowTwo.classList.removeClassName('isSticky')
   // }
 
+  const handleScroll = () => {
+    if (window.scrollY > 250) {
+      setScrolled(true)
+    } else {
+      setScrolled(false)
+    }
+  }
+
+  // const authContext = useContext(AuthContext)
+  const [searchItem, setSearchItem] = useState('')
+
+  const handleInputChange = (e) => {
+    const searchItem = e.target.value
+    setSearchItem(searchItem)
+  }
+  const [showSignInForm, setShowSignInForm] = useState(false)
+  // const [showSignUpContainer, setShowSignUpContainer] = useState(false)
+
+  const handleClose = () => {
+    setShowSignInForm(false)
+    setShowSignUpContainer(false)
+  }
+
   return (
     <>
       <header>
         <div
-          className={`${styles.headerContainer} ${fix ? styles.fixed : ''}`}
-          // className={`fix ? ${styles.headerContainer} ${styles.fixed} : ${styles.headerContainer}`}
+          // className={styles.headerContainer}
+          className={
+            isScrolled
+              ? `${styles.headerScrolled}`
+              : `${styles.headerContainer}`
+          }
 
           // className={`${styles.toggleEye} ${
           //   isPasswordVisible ? styles.openEye : styles.closeEye
           // }`}
         >
-          <div className={styles.rowOne}>
+          <div
+            className={isScrolled ? `${styles.noDisplay}` : `${styles.rowOne}`}
+          >
             <div className={styles.logo}>
               <img src="public\images\Asset36and4x.png" alt="logo" />
             </div>
@@ -76,7 +88,14 @@ export default function Header() {
               scrolledUp ? 'styles.stickyRowTwo' : 'styles.rowTwo'
             }`}
           > */}
-          <div className={styles.rowTwo} id="rowTwo">
+          <div
+            // className={styles.rowTwo}
+            className={
+              isScrolled
+                ? `${styles.stickyRow} ${styles.rowTwo}`
+                : `${styles.rowTwo}`
+            }
+          >
             <div>
               <button className={styles.catalogButton}>
                 Каталог

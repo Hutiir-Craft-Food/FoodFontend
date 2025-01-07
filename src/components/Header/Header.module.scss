@@ -6,6 +6,7 @@
   width: 100%;
   // width: 1440px;
   height: 172px;
+  transition: height 2s;
   background: $white;
   display: flex;
   justify-content: center;
@@ -19,6 +20,11 @@
   padding-top: 32px;
   gap: 24px;
   // overflow: hidden;
+  // .sticky {
+  //   position: fixed;
+  //   top: 0;
+  //   width: 100%;
+  // }
 
   .rowOne {
     width: 816px;
@@ -39,19 +45,31 @@
       // position: absolute;
     }
   }
+  .noDisplay {
+    display: none;
+  }
+
   .rowTwo {
     width: 1232px;
     height: 60px;
     background: $white;
+    // overflow: hidden;
+
+    // new implamintation start
+    // position: sticky;
+    // position: -webkit-sticky;
+    // top: 0;
+    // new implemantation end
+
     // position: fixed;
-    top: 56px;
+    // top: 56px;
     // z-index: 999;
     // position: sticky;
     // padding: 16px 0 16px 0;
     padding-bottom: 16px;
     // z-index: 1;
     display: flex;
-    flex-direction: row;
+    // flex-direction: row;
 
     border-bottom: 1px solid lighten($primary, 30%);
     justify-content: space-between;
@@ -72,16 +90,16 @@
         border: 1px solid $primary;
         border-radius: 8px;
       }
-      &.isSticky {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
-        // padding-top: 0px;
-        // padding-bottom: 0px;
-      }
+      // &.isSticky {
+      //   position: fixed;
+      //   top: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   z-index: 999;
+      //   animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+      //   // padding-top: 0px;
+      //   // padding-bottom: 0px;
+      // }
     }
 
     // .stickyRowTwo {
@@ -159,9 +177,29 @@
       }
     }
   }
-  &.fixed {
-    // position: sticky;
-    // transition: 0.3s ease-in-out;
-    transition: all 0.5s ease;
+
+  // &.fixed {
+  //   // position: sticky;
+  //   // transition: 0.3s ease-in-out;
+  //   transition: all 0.5s ease;
+  // }
+}
+
+.headerScrolled {
+  height: 60px;
+  .rowOne {
+    // overflow: hidden;
+    visibility: hidden;
+  }
+  .rowTwo {
+    position: sticky;
+    top: 0px;
+  }
+  // height: 10.75rem;
+  .stickyRow {
+    position: fixed;
+    z-index: 999;
+    position: sticky;
+    top: 0px;
   }
 }
