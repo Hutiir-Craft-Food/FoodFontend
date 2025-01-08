@@ -17,24 +17,6 @@ export default function Header() {
     }
   }, [])
 
-  // const scrolledUp = useScrollingUp()
-
-  // // Sticky Menu Area
-  // useEffect(() => {
-  //   window.addEventListener('scroll', isSticky)
-  //   return () => {
-  //     window.removeEventListener('scroll', isSticky)
-  //   }
-  // })
-  // /* Method that will fix header after a specific scrollable */
-  // const isSticky = (e) => {
-  //   const rowTwo = document.querySelector('.rowTwo')
-  //   const scrollTop = window.scrollY
-  //   scrollTop >= 56
-  //     ? rowTwo.classList.addClassName('styles.isSticky')
-  //     : rowTwo.classList.removeClassName('isSticky')
-  // }
-
   const handleScroll = () => {
     if (window.scrollY > 250) {
       setScrolled(true)
@@ -62,20 +44,11 @@ export default function Header() {
     <>
       <header>
         <div
-          // className={styles.headerContainer}
-          className={
-            isScrolled
-              ? `${styles.headerScrolled}`
-              : `${styles.headerContainer}`
-          }
-
-          // className={`${styles.toggleEye} ${
-          //   isPasswordVisible ? styles.openEye : styles.closeEye
-          // }`}
+          className={`${styles.headerContainer}
+           ${isScrolled ? styles.scrolledHeader : ''}
+          }`}
         >
-          <div
-            className={isScrolled ? `${styles.noDisplay}` : `${styles.rowOne}`}
-          >
+          <div className={styles.rowOne}>
             <div className={styles.logo}>
               <img src="public\images\Asset36and4x.png" alt="logo" />
             </div>
@@ -83,18 +56,11 @@ export default function Header() {
               <Navbar />
             </div>
           </div>
-          {/* <div
-            className={`${
-              scrolledUp ? 'styles.stickyRowTwo' : 'styles.rowTwo'
-            }`}
-          > */}
+
           <div
-            // className={styles.rowTwo}
-            className={
-              isScrolled
-                ? `${styles.stickyRow} ${styles.rowTwo}`
-                : `${styles.rowTwo}`
-            }
+            className={`${styles.rowTwo} ${
+              isScrolled ? styles.stickyRowTwo : ''
+            }`}
           >
             <div>
               <button className={styles.catalogButton}>
