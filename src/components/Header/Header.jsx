@@ -18,7 +18,7 @@ export default function Header() {
   }, [])
 
   const handleScroll = () => {
-    if (window.scrollY > 250) {
+    if (window.scrollY > 200) {
       setScrolled(true)
     } else {
       setScrolled(false)
