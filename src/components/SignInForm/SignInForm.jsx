@@ -1,7 +1,6 @@
 import { useContext, useState, useCallback } from 'react'
 import SignUpContainer from '../SignUpContainer/SignUpContainer'
 import ModalWindow from '../ModalWindow/ModalWindow'
-// import useToken from '../../hooks/useToken'
 import styles from './SignInForm.module.scss'
 import { AuthContext } from '../../containers/AuthContext'
 import AuthService from '../../services/authService'
@@ -17,7 +16,6 @@ const SignInForm = () => {
   const [password, setPassword] = useState('')
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
   const [errors, setErrors] = useState({})
-  // const { setToken } = useToken();
 
   const handleClose = () => {
     setShowSignUpContainer(false)
@@ -86,7 +84,6 @@ const SignInForm = () => {
       const data = await response.json()
 
       if (response.ok) {
-        // authContext.setToken(data.jwt)
         AuthService.login(username, password).then(() => {
           navigate('/profile')
           window.location.reload()

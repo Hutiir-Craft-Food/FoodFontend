@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react'
-// import { AuthContext } from '../../containers/AuthContext'
 import Navbar from '../Navbar/Navbar'
 import ModalWindow from '../ModalWindow/ModalWindow'
 import SignInForm from '../SignInForm/SignInForm'
-// import useScrollingUp from '../../hooks/useScrolling'
-// import { SearchInput } from '../../services/SearchableProductsList'
 import styles from './Header.module.scss'
 
 export default function Header() {
@@ -25,7 +22,6 @@ export default function Header() {
     }
   }
 
-  // const authContext = useContext(AuthContext)
   const [searchItem, setSearchItem] = useState('')
 
   const handleInputChange = (e) => {
@@ -33,7 +29,6 @@ export default function Header() {
     setSearchItem(searchItem)
   }
   const [showSignInForm, setShowSignInForm] = useState(false)
-  // const [showSignUpContainer, setShowSignUpContainer] = useState(false)
 
   const handleClose = () => {
     setShowSignInForm(false)
@@ -71,7 +66,7 @@ export default function Header() {
             <div className={styles.searchContainer}>
               <input
                 type="search"
-                placeholder="Я шукаю ..."
+                placeholder="Я шукаю . . ."
                 value={searchItem}
                 onChange={handleInputChange}
               />
@@ -80,17 +75,6 @@ export default function Header() {
                 src="/images/Icon.svg"
                 alt="magnifyingGlass"
               />
-
-              {/* <ul>
-                {users.map((user) => (
-                  <li key={user.id}>{user.firstName}</li>
-                ))}
-              </ul> */}
-              {/* <ul>
-                {products.map((product) => (
-                  <li key={product.id}>{product.name}</li>
-                ))}
-              </ul> */}
             </div>{' '}
             <div className={styles.iconsContainer}>
               <div className={styles.userIcon}>
@@ -99,24 +83,6 @@ export default function Header() {
                   alt="user icon"
                   onClick={() => setShowSignInForm(true)}
                 />
-
-                {/* {{ token } ? (
-                  <img
-                    src="/images/user_logIn_default.svg"
-                    alt="user icon"
-                    onClick={() => setShowSignInForm(true)}
-                  />
-                ) : (
-                  <img
-                    src="/images/user_log out_default.svg"
-                    alt="user icon"
-                    onClick={() => setShowSignInForm(true)}
-                  />
-                )} */}
-
-                {/* <button onClick={() => setShowSignInForm(true)}>
-
-                </button> */}
               </div>
 
               <div className={styles.heartIcon}>
@@ -138,13 +104,6 @@ export default function Header() {
         handleClose={handleClose}
         form={<SignInForm />}
       />
-      {/* <ModalWindow
-        show={showSignUpContainer}
-        handleClose={handleClose}
-        form={
-          <SignUpContainer setShowSignUpContainer={setShowSignUpContainer} />
-        }
-      /> */}
     </>
   )
 }

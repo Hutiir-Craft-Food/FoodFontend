@@ -4,7 +4,6 @@
 
 .headerContainer {
   width: 100%;
-  // width: 1440px;
   height: 172px;
   transition: height 2s;
   background: $white;
@@ -12,8 +11,6 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  // top: 10px;
-  // left: 20px;
   padding-top: 32px;
   gap: 24px;
 
@@ -24,7 +21,6 @@
   .rowOne {
     width: 816px;
     height: 56px;
-    // position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,7 +31,6 @@
       all: unset;
       width: 578px;
       float: right;
-      // position: absolute;
     }
   }
 
@@ -43,16 +38,13 @@
     width: 1232px;
     height: 60px;
     background: $white;
-    // padding: 16px 0 16px 0;
     padding-bottom: 16px;
     display: flex;
-    border-bottom: 1px solid lighten($primary, 30%);
+    border-bottom: 1px solid $primary-20;
     justify-content: space-between;
     &.stickyRowTwo {
       position: fixed;
       overflow: hidden;
-      // position: sticky;
-      // position: -webkit-sticky;
       top: 0;
       padding-top: 10px;
       z-index: 999;
@@ -61,7 +53,6 @@
       width: 168px;
       height: 44px;
       display: flex;
-      // @include buttonL();
       align-items: center;
       justify-content: center;
       @extend .paragraph4;
@@ -71,20 +62,9 @@
       gap: 8px;
       @include buttonPrimaryColor;
       .active {
-        border: 1px solid $primary;
+        border: 1px solid $primary-50;
         border-radius: 8px;
       }
-
-      // &.isSticky {
-      //   position: fixed;
-      //   top: 0;
-      //   left: 0;
-      //   width: 100%;
-      //   z-index: 999;
-      //   animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
-      //   // padding-top: 0px;
-      //   // padding-bottom: 0px;
-      // }
     }
 
     .searchContainer {
@@ -94,16 +74,14 @@
         height: 44px;
         padding: 0px 8px 0px 16px;
         gap: 8px;
-
-        // @include inputs;
         @extend .paragraph3;
         border-radius: 8px;
         text-align: left;
         outline: none;
-        @include bordered(1px, lighten($primary, 30%));
+        @include bordered(1px, $primary-20);
       }
       &:placeholder-shown {
-        color: lighten($natural, 20%);
+        color: $natural-30;
       }
       .magnifyingGlass {
         position: absolute;
@@ -133,9 +111,6 @@
         opacity: 0px;
       }
       .heartIcon {
-        // position: relative;
-        // right: 120px;
-        // top: 50px;
         width: 44px;
         height: 44px;
         display: flex;
@@ -144,9 +119,6 @@
         opacity: 0px;
       }
       .backetIcon {
-        // position: relative;
-        // right: 120px;
-        // top: 50px;
         width: 44px;
         height: 44px;
         display: flex;
