@@ -3,7 +3,6 @@ import SignUpContainer from '../SignUpContainer/SignUpContainer'
 import ModalWindow from '../ModalWindow/ModalWindow'
 import styles from './SignInForm.module.scss'
 import { AuthContext } from '../../containers/AuthContext'
-import AuthService from '../../services/authService'
 import { useNavigate } from 'react-router-dom'
 
 const SignInForm = () => {
