@@ -3,11 +3,9 @@ import SignUpContainer from '../SignUpContainer/SignUpContainer'
 import ModalWindow from '../ModalWindow/ModalWindow'
 import styles from './SignInForm.module.scss'
 import { AuthContext } from '../../containers/AuthContext'
-import { useNavigate } from 'react-router-dom'
 
 const SignInForm = () => {
   const authContext = useContext(AuthContext)
-  const navigate = useNavigate()
 
   const [showSignUpContainer, setShowSignUpContainer] = useState(false)
 
@@ -83,10 +81,7 @@ const SignInForm = () => {
       const data = await response.json()
 
       if (response.ok) {
-        AuthService.login(username, password).then(() => {
-          navigate('/profile')
-          window.location.reload()
-        })
+        authContext.setToken(data.jwt)
         setEmail('')
         setPassword('')
         setErrors({})

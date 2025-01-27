@@ -45,7 +45,7 @@ export default function Header() {
         >
           <div className={styles.rowOne}>
             <div className={styles.logo}>
-              <img src="public\images\Asset36and4x.png" alt="logo" />
+              <img src="images\logoHK-36@4x.svg" alt="logo" />
             </div>
             <div className={styles.nav}>
               <Navbar />
@@ -60,7 +60,7 @@ export default function Header() {
             <div>
               <button className={styles.catalogButton}>
                 Каталог
-                <img src="/images/CaretDown.svg" alt="CaretDown" />
+                <img src="\images\caret-down.svg" alt="CaretDown" />
               </button>
             </div>
             <div className={styles.searchContainer}>
@@ -72,7 +72,7 @@ export default function Header() {
               />
               <img
                 className={styles.magnifyingGlass}
-                src="/images/Icon.svg"
+                src="\images\magnifying-glass.svg"
                 alt="magnifyingGlass"
               />
             </div>{' '}
@@ -90,7 +90,7 @@ export default function Header() {
               </div>
               <div className={styles.backetIcon}>
                 <img
-                  src="/images/bascket_default_noNotif.svg"
+                  src="\images\bascket-default-noNotif.svg"
                   alt="user icon"
                 />
               </div>
