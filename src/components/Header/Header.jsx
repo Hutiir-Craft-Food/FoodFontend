@@ -70,23 +70,25 @@ export default function Header() {
                 value={searchItem}
                 onChange={handleInputChange}
               />
-              <img
-                className={styles.magnifyingGlass}
-                src="\images\magnifying-glass.svg"
-                alt="magnifyingGlass"
-              />
+              <button className={styles.magnifyingGlass}>
+                <img
+                  className={styles.magnifyingGlass}
+                  src="\images\magnifying-glass.svg"
+                  alt="magnifyingGlass"
+                />
+              </button>
             </div>{' '}
             <div className={styles.iconsContainer}>
               <div className={styles.userIcon}>
                 <img
-                  src="/images/user_log out_default.svg"
+                  src="/images/user-logout-default.svg"
                   alt="user icon"
                   onClick={() => setShowSignInForm(true)}
                 />
               </div>
 
               <div className={styles.heartIcon}>
-                <img src="/images/heartIcon_default.svg" alt="heart icon" />
+                <img src="/images/heartIcon-default.svg" alt="heart icon" />
               </div>
               <div className={styles.backetIcon}>
                 <img
