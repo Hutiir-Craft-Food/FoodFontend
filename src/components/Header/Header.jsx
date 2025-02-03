@@ -45,7 +45,7 @@ export default function Header() {
         >
           <div className={styles.rowOne}>
             <div className={styles.logo}>
-              <img src="images\logoHK-36@4x.svg" alt="logo" />
+              <img src="\images\logoHK-36@4x.svg" alt="logo" />
             </div>
             <div className={styles.nav}>
               <Navbar />
