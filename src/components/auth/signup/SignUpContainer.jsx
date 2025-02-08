@@ -4,7 +4,7 @@ import SignUpBuyerForm from './buyer-form/SignUpBuyerForm'
 import SignUpSellerForm from './seller-form/SignUpSellerForm'
 import { AuthContext } from '../../../containers/AuthContext'
 
-export default function SignUpContainer({ setShowSignUpContainer }) {
+export default function SignUpContainer() {
   const authContext = useContext(AuthContext)
 
   const [role, setRole] = useState('BUYER')
@@ -30,7 +30,6 @@ export default function SignUpContainer({ setShowSignUpContainer }) {
           authContext.setToken(data.jwt)
           setFormData({})
           setSubscription(false)
-          setShowSignUpContainer(false)
         }
         // else {
         //   const errorMessage =
@@ -49,23 +48,6 @@ export default function SignUpContainer({ setShowSignUpContainer }) {
 
   return (
     <div className={styles.signUpContainer}>
-      {role === 'BUYER' && (
-        <div className={styles.imgContainer}>
-          <img src='/images/sign-in.png' alt='imgForBuyerRegistration' className={styles.imgBuyer} />
-        </div>
-      )}
-      {role === 'SELLER' && (
-        <div className={styles.imgContainer}>
-          <img src='/images/sign-in.png' alt='imgForBuyerRegistration' className={styles.imgSeller} />
-
-          <div className={styles.steps}>
-            <p>
-              <span className={styles.steps}>1-2-3</span>
-            </p>
-          </div>
-        </div>
-      )}
-
       <div className={styles.contentContainer}>
         <h4>Реєстрація</h4>
         <form onSubmit={handleSubmit}>
