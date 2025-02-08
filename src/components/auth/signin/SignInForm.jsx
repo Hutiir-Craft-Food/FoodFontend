@@ -96,9 +96,6 @@ const SignInForm = () => {
 
   return (
     <div className={styles.signInContainer}>
-      <div>
-        <img src='/images/sign-in.png' alt='food' className={styles.imgFood} />
-      </div>
       <div className={styles.formContainer}>
         <h2>Вхід</h2>
         <form onSubmit={handleSignIn}>

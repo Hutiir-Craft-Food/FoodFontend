@@ -32,7 +32,6 @@ export default function Header() {
 
   const handleClose = () => {
     setShowSignInForm(false)
-    setShowSignUpContainer(false)
   }
 
   return (
@@ -81,7 +80,7 @@ export default function Header() {
         </div>
       </header>
 
-      <ModalWindow show={showSignInForm} handleClose={handleClose} form={<SignInForm />} />
+      {showSignInForm && <ModalWindow handleClose={handleClose} form={<SignInForm />} />}
     </>
   )
 }
