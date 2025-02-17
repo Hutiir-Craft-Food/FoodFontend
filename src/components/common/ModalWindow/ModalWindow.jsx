@@ -1,4 +1,4 @@
-import myIcon from '../../../images/mdi_close.svg'
+import myIcon from '../../../../public/images/mdi_close.svg'
 import styles from './ModalWindow.module.scss'
 
 export default function Modal({ show, handleClose, form }) {

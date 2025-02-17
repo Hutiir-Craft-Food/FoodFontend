@@ -1,7 +1,7 @@
 import CustomCarousel from '../../common/CustomCarousel/CustomCarousel'
 import styles from './HomePage.module.scss'
 import NewProducts from '../../product/NewProducts/NewProducts'
-import Sellers from '../../../containers/Sellers/Sellers'
+import Sellers from '../../seller/Sellers/Sellers'
 import RecommendedProducts from '../../product/RecommendedProducts/RecommendedProducts'
 import ProductsOffers from '../../product/ProductOffers/ProductOffers'
 
