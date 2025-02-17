@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Carousel from 'react-multi-carousel'
-import fetchCarousel from '../../services/fetchCarousel'
+import fetchCarousel from '../../../services/fetchCarousel'
 import styles from './CustomCarousel.module.scss'
 
 export default function CustomCarousel({ title, carouselCategory }) {
