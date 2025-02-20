@@ -1,22 +1,13 @@
 import { useContext, useState, useCallback } from 'react'
-import SignUpContainer from '../SignUpContainer/SignUpContainer'
-import ModalWindow from '../ModalWindow/ModalWindow'
 import styles from './SignInForm.module.scss'
 import { AuthContext } from '../../containers/AuthContext'
 
 const SignInForm = () => {
   const authContext = useContext(AuthContext)
-
-  const [showSignUpContainer, setShowSignUpContainer] = useState(false)
-
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
   const [errors, setErrors] = useState({})
-
-  const handleClose = () => {
-    setShowSignUpContainer(false)
-  }
 
   const handleEyeButtonClick = (e) => {
     e.preventDefault()
@@ -168,20 +159,9 @@ const SignInForm = () => {
           </button>
           <br />
         </form>
-        <div>
-          <button
-            className={styles.signUpLink}
-            onClick={() => setShowSignUpContainer(true)}
-          >
-            {' '}
-            Зареєструватись
-          </button>
-          <ModalWindow
-            show={showSignUpContainer}
-            handleClose={handleClose}
-            form={<SignUpContainer />}
-          />
-        </div>
+        <a className={styles.signUpLink} href="#">
+          Зареєструватись
+        </a>
       </div>
     </div>
   )
