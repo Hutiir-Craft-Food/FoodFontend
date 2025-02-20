@@ -1,6 +1,6 @@
 import { useContext, useState, useCallback } from 'react'
 import styles from './SignInForm.module.scss'
-import { AuthContext } from '../../../containers/AuthContext'
+import { AuthContext } from '../../../contexts/AuthContext.js'
 
 const SignInForm = () => {
   const authContext = useContext(AuthContext)

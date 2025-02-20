@@ -1,9 +1,9 @@
-import CustomCarousel from '../../common/CustomCarousel/CustomCarousel'
+import CustomCarousel from '../../components/CustomCarousel/CustomCarousel'
 import styles from './HomePage.module.scss'
-import NewProducts from '../../product/NewProducts/NewProducts'
-import Sellers from '../../seller/Sellers/Sellers'
-import RecommendedProducts from '../../product/RecommendedProducts/RecommendedProducts'
-import ProductsOffers from '../../product/ProductOffers/ProductOffers'
+import NewProducts from '../../feature/product/NewProducts/NewProducts'
+import Sellers from '../../feature/seller/Sellers/Sellers'
+import RecommendedProducts from '../../feature/product/RecommendedProducts/RecommendedProducts'
+import ProductsOffers from '../../feature/product/ProductOffers/ProductOffers'
 
 export default function HomePage() {
   return (
