@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ModalWindow from '../ModalWindow/ModalWindow'
-import SignInForm from '../SignInForm/SignInForm'
-import SignUpContainer from '../SignUpContainer/SignUpContainer'
+import SignInForm from '../../feature/auth/SignInForm/SignInForm'
+import SignUpContainer from '../../feature/auth/SignUpContainer/SignUpContainer'
 import styles from './Navbar.module.scss'
 
 export default function Navbar() {
